@@ -8,6 +8,8 @@ Example:
 
 `echo TimeZoneSelect::get_select(['country'=>'US']);`
 
+Simple demo avaiable: http://scott.connerly.net/TimeZone/example.php
+
 Available args w/ default values:
 ```
 [
