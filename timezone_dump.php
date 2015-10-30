@@ -47,5 +47,5 @@ if(count($zoneRbLines)) {
 
     $tzJson = json_encode($tzArray, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
-    file_put_contents('./tzid.json', $tzJson);
+    file_put_contents(__DIR__.'/tzid.json', $tzJson);
 }

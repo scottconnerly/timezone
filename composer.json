@@ -1,0 +1,19 @@
+{
+    "name": "ScottConnerly/TimeZone",
+    "description": "Bringing Ruby on Rails' time zone list to PHP.",
+    "license": "GPLv2",
+    "keywords": ["timezone"],
+    "authors": [
+        {
+            "name": "Scott connerly",
+            "email": "scott@connerly.net"
+        }
+    ],
+    "require": {},
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "ScottConnerly\\TimeZone\\": "src"
+        }
+    }
+}
