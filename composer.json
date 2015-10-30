@@ -1,5 +1,5 @@
 {
-    "name": "ScottConnerly/TimeZone",
+    "name": "scottconnerly/timezone",
     "description": "Bringing Ruby on Rails' time zone list to PHP.",
     "license": "GPLv2",
     "keywords": ["timezone"],
