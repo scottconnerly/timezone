@@ -22,7 +22,7 @@ class TimeZoneSelect {
         return $output;
     }
     
-    public static function get_options_for_select($p) {
+    public static function get_options_for_select($p = []) {
         if(!empty($p['country'])) {
             $p['priority_zones'] = DateTimeZone::listIdentifiers(DateTimeZone::PER_COUNTRY, $p['country']);
             //$p['priority_label'] = locale_get_display_region('-'.$p['country'], 'en');
@@ -65,7 +65,7 @@ class TimeZoneSelect {
         return $output;
     }
     
-    protected static function make_zone_option($tzDatum, $p) {
+    protected static function make_zone_option($tzDatum, $p = []) {
         $output = '<option';
         if($p['selected'] == $tzDatum['identifier'] && $tzDatum['primary'])
             $output .= ' selected';
@@ -73,7 +73,7 @@ class TimeZoneSelect {
         return $output;
     }
     
-    public static function get_time_zones($p) {
+    public static function get_time_zones($p = []) {
         $identifiers = array();
         $tzJson = file_get_contents(__DIR__."/../tzid.json");
         $tzs = json_decode($tzJson);
