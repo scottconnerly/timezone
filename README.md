@@ -4,7 +4,7 @@ Creating a time zone select in PHP can get unruly quickly, as DateTimeZone::list
  * This repo involves occasionally scraping the rails repo. Here is the ticket asking Rails to make their data file more easily accessable: https://github.com/rails/rails/issues/22088
  * It would be much easier if PHP had a similarly curated list inside of PHP. Here's the request to them for that: https://bugs.php.net/bug.php?id=70801
 
-![Screenshot of timezone select](timezone-select-screenshot.jpg?raw=true "Screenshot of timezone select")
+![Screenshot of timezone select](timezone-select-screenshot.png?raw=true "Screenshot of timezone select")
 
 Example:
 
