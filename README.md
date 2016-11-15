@@ -13,7 +13,7 @@ Available args w/ default values:
 ```
 [
     'country'        => '',          //ISO-3116 2-letter country code
-    'priority_zones' => array(),     //If you want to specify a list of zones that aren't country-specific
+    'priority_zones' => [],     //If you want to specify a list of zones that aren't country-specific
     'priority_label' => 'Regional',  //The label of the optgroup for the priority zones
 
     'selected'       => '',          //which option is selected
@@ -21,7 +21,7 @@ Available args w/ default values:
     'name'           => 'time_zone', //name for the <select>
     'class'          => '',          //class for the <select>
     'id'             => '',          //id for the <select>
-    'data'           => array(),     //list of data attributes to add to the <select>
+    'data'           => [],     //list of data attributes to add to the <select>
 ]
 ```
 
