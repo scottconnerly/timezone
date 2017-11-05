@@ -21,7 +21,7 @@ if(!class_exists('TimeZoneSelect')) {
 	<h1>Time Zone Select</h1>
 	
     <form>
-        <?php echo TimeZoneSelect::get_select([
+        <?php echo TimeZoneSelect::get_select_html([
             'country'=>'US',
             'selected'=>'Pacific/Midway'
         ]); ?>
