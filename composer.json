@@ -1,7 +1,7 @@
 {
     "name": "scottconnerly/timezone",
     "description": "Bringing Ruby on Rails' time zone list to PHP.",
-    "license": "GPLv2",
+    "license": "GPL-2.0-only",
     "keywords": ["timezone"],
     "authors": [
         {
