@@ -27,6 +27,9 @@ class TimeZoneSelect {
     }
     
     public static function get_options_for_select($params = []) {
+        $output = '';
+        $priorityData = [];
+
         if (!empty($params['country'])) {
             $params['priority_zones'] = DateTimeZone::listIdentifiers(DateTimeZone::PER_COUNTRY, $params['country']);
             //$params['priority_label'] = locale_get_display_region('-'.$params['country'], 'en');
@@ -79,13 +82,15 @@ class TimeZoneSelect {
     }
     
     public static function get_time_zones($params = []) {
+        // Prep varrs and arrays that wil lbe accessed but not yet created
         $identifiers = array();
+        $tzData = [];
         $tzJson = file_get_contents(__DIR__."/../tzid.json");
         $tzs = json_decode($tzJson);
         
         $defaultTimeZone = date_default_timezone_get();
         date_default_timezone_set('UTC'); //Is this problematic for larger systems to load this file? Should we return it to its value?
-
+        $i = 0;
         foreach($tzs as $nameDisplay => $tzinfoIdentifier) {
             $offsetSeconds = timezone_offset_get( new DateTimeZone($tzinfoIdentifier), new DateTime() );
             $offsetFormatted = static::formatOffset($offsetSeconds);
@@ -98,7 +103,8 @@ class TimeZoneSelect {
             $tzIsBestFitForIdentifier = 1;
             if (!empty($otherTzWithIdentifier)) {
                 foreach ($otherTzWithIdentifier as $otherTz) {
-                    if ($levenshtein < $tzData[$otherTz]['levenshtein']) {
+                    // RG - Check for the presence of the sub-array first
+                    if (isset($tzData[$otherTz]) && $levenshtein < $tzData[$otherTz]['levenshtein']) {
                         $tzData[$otherTz]['primary'] = 0;
                     }
                     else {
@@ -131,6 +137,7 @@ class TimeZoneSelect {
         date_default_timezone_set($defaultTimeZone);
         
         return $tzData;
+        // TODO This could be cached
     }
     
     private static function formatOffset($offsetSeconds) {
@@ -146,8 +153,10 @@ class TimeZoneSelect {
         return $offsetFormatted;
     }
 
-    public static function get_select($params) {
+    public static function get_select($params)
+    {
         //Deprecated
-        this->get_select_html($params);
+        // RG - Fixed reference to static method
+        return self::get_select_html($params);
     }
 }
