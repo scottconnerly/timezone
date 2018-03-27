@@ -74,7 +74,7 @@ class TimeZoneSelect {
     }
     
     protected static function make_zone_option($tzDatum, $params = []) {
-        $output = '<option';
+        $output = '<option value="' . $tzDatum['identifier'] . '"';
         if($params['selected'] == $tzDatum['identifier'] && $tzDatum['primary'])
             $output .= ' selected';
         $output .= ">$tzDatum[alias]</option>";                    
